@@ -1,0 +1,624 @@
+{
+  "version": "1.0.18",
+  "name": "Sox2 Multiome",
+  "description": "",
+  "datasets": [
+    {
+      "uid": "A",
+      "name": "Multiome",
+      "files": [
+        {
+          "fileType": "anndata.zarr",
+          "url": "http://localhost:8080/data/Multiome_combined.zarr",
+          "options": {
+            "obsEmbedding": [
+              {
+                "path": "obsm/joint.umap",
+                "dims": [
+                  0,
+                  1
+                ],
+                "embeddingType": "Joint UMAP"
+              }
+            ],
+            "obsSets": [
+              {
+                "name": "Joint Cell Type",
+                "path": "obs/joint_cell_type"
+              },
+              {
+                "name": "Condition",
+                "path": "obs/condition"
+              },
+              {
+                "name": "Cell Cycle Phase",
+                "path": "obs/Phase"
+              }
+            ],
+            "obsFeatureMatrix": {
+              "path": "X"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "uid": "B",
+      "name": "WT Spatial",
+      "files": [
+        {
+          "fileType": "image.ome-zarr",
+          "url": "http://localhost:8080/data/WT_tissue.ome.zarr",
+          "coordinationValues": {
+            "fileUid": "wt-image"
+          }
+        },
+        {
+          "fileType": "anndata.zarr",
+          "url": "http://localhost:8080/data/WT_combined_spatial.zarr",
+          "options": {
+            "obsLocations": {
+              "path": "obsm/X_spatial"
+            },
+            "obsSegmentations": {
+              "path": "obsm/X_segmentations"
+            },
+            "obsSets": [
+              {
+                "name": "SCT Clusters",
+                "path": "obs/sct_clusters"
+              }
+            ],
+            "obsFeatureMatrix": {
+              "path": "X"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "uid": "C",
+      "name": "KO Spatial",
+      "files": [
+        {
+          "fileType": "image.ome-zarr",
+          "url": "http://localhost:8080/data/KO_tissue.ome.zarr",
+          "coordinationValues": {
+            "fileUid": "ko-image"
+          }
+        },
+        {
+          "fileType": "anndata.zarr",
+          "url": "http://localhost:8080/data/KO_poly_SCT_spatial.zarr",
+          "options": {
+            "obsLocations": {
+              "path": "obsm/X_spatial"
+            },
+            "obsSegmentations": {
+              "path": "obsm/X_segmentations"
+            },
+            "obsSets": [
+              {
+                "name": "SCT Clusters",
+                "path": "obs/sct_clusters"
+              }
+            ],
+            "obsFeatureMatrix": {
+              "path": "layers/data"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "coordinationSpace": {
+    "dataset": {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    },
+    "embeddingType": {
+      "A": "Joint UMAP"
+    },
+    "spatialZoom": {
+      "A": null,
+      "B": null
+    },
+    "spatialTargetX": {
+      "A": null,
+      "B": null
+    },
+    "spatialTargetY": {
+      "A": null,
+      "B": null
+    },
+    "featureSelection": {
+      "A": [
+        "Sox2"
+      ]
+    },
+    "imageLayer": {
+      "init_B_image_0": "__dummy__",
+      "init_C_image_0": "__dummy__"
+    },
+    "fileUid": {
+      "init_B_image_0": "wt-image",
+      "init_C_image_0": "ko-image"
+    },
+    "photometricInterpretation": {
+      "init_B_image_0": "RGB",
+      "init_C_image_0": "RGB"
+    },
+    "metaCoordinationScopes": {
+      "init_B_image_0": {
+        "imageLayer": [
+          "init_B_image_0"
+        ]
+      },
+      "init_B_obsSegmentations_0": {
+        "segmentationLayer": [
+          "init_B_obsSegmentations_0"
+        ]
+      },
+      "init_C_image_0": {
+        "imageLayer": [
+          "init_C_image_0"
+        ]
+      },
+      "init_C_obsSegmentations_0": {
+        "segmentationLayer": [
+          "init_C_obsSegmentations_0"
+        ]
+      }
+    },
+    "metaCoordinationScopesBy": {
+      "init_B_image_0": {
+        "imageLayer": {
+          "fileUid": {
+            "init_B_image_0": "init_B_image_0"
+          },
+          "photometricInterpretation": {
+            "init_B_image_0": "init_B_image_0"
+          }
+        }
+      },
+      "init_B_obsSegmentations_0": {
+        "segmentationLayer": {
+          "segmentationChannel": {
+            "init_B_obsSegmentations_0": [
+              "init_B_obsSegmentations_0"
+            ]
+          }
+        },
+        "segmentationChannel": {
+          "obsColorEncoding": {
+            "init_B_obsSegmentations_0": "A"
+          },
+          "spatialChannelOpacity": {
+            "init_B_obsSegmentations_0": "init_B_obsSegmentations_0"
+          },
+          "spatialSegmentationFilled": {
+            "init_B_obsSegmentations_0": "init_B_obsSegmentations_0"
+          },
+          "spatialSegmentationStrokeWidth": {
+            "init_B_obsSegmentations_0": "init_B_obsSegmentations_0"
+          }
+        }
+      },
+      "init_C_image_0": {
+        "imageLayer": {
+          "fileUid": {
+            "init_C_image_0": "init_C_image_0"
+          },
+          "photometricInterpretation": {
+            "init_C_image_0": "init_C_image_0"
+          }
+        }
+      },
+      "init_C_obsSegmentations_0": {
+        "segmentationLayer": {
+          "segmentationChannel": {
+            "init_C_obsSegmentations_0": [
+              "init_C_obsSegmentations_0"
+            ]
+          }
+        },
+        "segmentationChannel": {
+          "obsColorEncoding": {
+            "init_C_obsSegmentations_0": "A"
+          },
+          "spatialChannelOpacity": {
+            "init_C_obsSegmentations_0": "init_C_obsSegmentations_0"
+          },
+          "spatialSegmentationFilled": {
+            "init_C_obsSegmentations_0": "init_C_obsSegmentations_0"
+          },
+          "spatialSegmentationStrokeWidth": {
+            "init_C_obsSegmentations_0": "init_C_obsSegmentations_0"
+          }
+        }
+      }
+    },
+    "obsColorEncoding": {
+      "A": "cellSetSelection"
+    },
+    "segmentationLayer": {
+      "init_B_obsSegmentations_0": "__dummy__",
+      "init_C_obsSegmentations_0": "__dummy__"
+    },
+    "segmentationChannel": {
+      "init_B_obsSegmentations_0": "__dummy__",
+      "init_C_obsSegmentations_0": "__dummy__"
+    },
+    "spatialChannelOpacity": {
+      "init_B_obsSegmentations_0": 0.8,
+      "init_C_obsSegmentations_0": 0.8
+    },
+    "spatialSegmentationFilled": {
+      "init_B_obsSegmentations_0": true,
+      "init_C_obsSegmentations_0": true
+    },
+    "spatialSegmentationStrokeWidth": {
+      "init_B_obsSegmentations_0": 1,
+      "init_C_obsSegmentations_0": 1
+    },
+    "obsSetSelection": {
+      "A": [
+        [
+          "SCT Clusters",
+          "0"
+        ],
+        [
+          "SCT Clusters",
+          "1"
+        ],
+        [
+          "SCT Clusters",
+          "2"
+        ],
+        [
+          "SCT Clusters",
+          "3"
+        ],
+        [
+          "SCT Clusters",
+          "4"
+        ],
+        [
+          "SCT Clusters",
+          "5"
+        ],
+        [
+          "SCT Clusters",
+          "6"
+        ]
+      ],
+      "B": [
+        [
+          "SCT Clusters",
+          "0"
+        ],
+        [
+          "SCT Clusters",
+          "1"
+        ],
+        [
+          "SCT Clusters",
+          "2"
+        ],
+        [
+          "SCT Clusters",
+          "3"
+        ],
+        [
+          "SCT Clusters",
+          "4"
+        ],
+        [
+          "SCT Clusters",
+          "5"
+        ]
+      ],
+      "C": [
+        [
+          "Joint Cell Type",
+          "CMZ_Like_1"
+        ],
+        [
+          "Joint Cell Type",
+          "CMZ_Like_2"
+        ],
+        [
+          "Joint Cell Type",
+          "RPCs"
+        ],
+        [
+          "Joint Cell Type",
+          "Neurogenic"
+        ],
+        [
+          "Joint Cell Type",
+          "Cones"
+        ],
+        [
+          "Joint Cell Type",
+          "Amacrine"
+        ],
+        [
+          "Joint Cell Type",
+          "Early_RGCs"
+        ],
+        [
+          "Joint Cell Type",
+          "Late_RGCs"
+        ]
+      ]
+    },
+    "obsSetColor": {
+      "A": [],
+      "B": [],
+      "C": [
+        {
+          "path": [
+            "Joint Cell Type",
+            "CMZ_Like_1"
+          ],
+          "color": [
+            248,
+            118,
+            109
+          ]
+        },
+        {
+          "path": [
+            "Joint Cell Type",
+            "CMZ_Like_2"
+          ],
+          "color": [
+            205,
+            150,
+            0
+          ]
+        },
+        {
+          "path": [
+            "Joint Cell Type",
+            "RPCs"
+          ],
+          "color": [
+            124,
+            174,
+            0
+          ]
+        },
+        {
+          "path": [
+            "Joint Cell Type",
+            "Neurogenic"
+          ],
+          "color": [
+            0,
+            190,
+            103
+          ]
+        },
+        {
+          "path": [
+            "Joint Cell Type",
+            "Cones"
+          ],
+          "color": [
+            0,
+            191,
+            196
+          ]
+        },
+        {
+          "path": [
+            "Joint Cell Type",
+            "Amacrine"
+          ],
+          "color": [
+            0,
+            169,
+            255
+          ]
+        },
+        {
+          "path": [
+            "Joint Cell Type",
+            "Early_RGCs"
+          ],
+          "color": [
+            199,
+            124,
+            255
+          ]
+        },
+        {
+          "path": [
+            "Joint Cell Type",
+            "Late_RGCs"
+          ],
+          "color": [
+            255,
+            97,
+            204
+          ]
+        },
+        {
+          "path": [
+            "Condition",
+            "WT"
+          ],
+          "color": [
+            248,
+            118,
+            109
+          ]
+        },
+        {
+          "path": [
+            "Condition",
+            "Sox2 cKO"
+          ],
+          "color": [
+            0,
+            191,
+            196
+          ]
+        },
+        {
+          "path": [
+            "Cell Cycle Phase",
+            "G1"
+          ],
+          "color": [
+            248,
+            118,
+            109
+          ]
+        },
+        {
+          "path": [
+            "Cell Cycle Phase",
+            "G2M"
+          ],
+          "color": [
+            0,
+            186,
+            56
+          ]
+        },
+        {
+          "path": [
+            "Cell Cycle Phase",
+            "S"
+          ],
+          "color": [
+            97,
+            156,
+            255
+          ]
+        }
+      ]
+    }
+  },
+  "layout": [
+    {
+      "component": "scatterplot",
+      "coordinationScopes": {
+        "dataset": "A",
+        "embeddingType": "A",
+        "featureSelection": "A",
+        "obsColorEncoding": "A",
+        "obsSetColor": "C",
+        "obsSetSelection": "C"
+      },
+      "x": 0,
+      "y": 0,
+      "w": 6,
+      "h": 6,
+      "coordinationScopesBy": {}
+    },
+    {
+      "component": "obsSets",
+      "coordinationScopes": {
+        "dataset": "A",
+        "obsColorEncoding": "A",
+        "obsSetColor": "C",
+        "obsSetSelection": "C"
+      },
+      "x": 0,
+      "y": 6,
+      "w": 3,
+      "h": 6,
+      "coordinationScopesBy": {}
+    },
+    {
+      "component": "featureList",
+      "coordinationScopes": {
+        "dataset": "A",
+        "featureSelection": "A",
+        "obsColorEncoding": "A"
+      },
+      "x": 3,
+      "y": 6,
+      "w": 3,
+      "h": 6,
+      "coordinationScopesBy": {}
+    },
+    {
+      "component": "spatialBeta",
+      "coordinationScopes": {
+        "dataset": "B",
+        "spatialZoom": "A",
+        "spatialTargetX": "A",
+        "spatialTargetY": "A",
+        "featureSelection": "A",
+        "metaCoordinationScopes": [
+          "init_B_image_0",
+          "init_B_obsSegmentations_0"
+        ],
+        "metaCoordinationScopesBy": [
+          "init_B_image_0",
+          "init_B_obsSegmentations_0"
+        ],
+        "obsSetSelection": "A",
+        "obsSetColor": "A"
+      },
+      "x": 6,
+      "y": 0,
+      "w": 3,
+      "h": 6
+    },
+    {
+      "component": "spatialBeta",
+      "coordinationScopes": {
+        "dataset": "C",
+        "spatialZoom": "B",
+        "spatialTargetX": "B",
+        "spatialTargetY": "B",
+        "featureSelection": "A",
+        "metaCoordinationScopes": [
+          "init_C_image_0",
+          "init_C_obsSegmentations_0"
+        ],
+        "metaCoordinationScopesBy": [
+          "init_C_image_0",
+          "init_C_obsSegmentations_0"
+        ],
+        "obsSetSelection": "B",
+        "obsSetColor": "B"
+      },
+      "x": 9,
+      "y": 0,
+      "w": 3,
+      "h": 6
+    },
+    {
+      "component": "layerControllerBeta",
+      "coordinationScopes": {
+        "dataset": "B",
+        "spatialZoom": "A",
+        "spatialTargetX": "A",
+        "spatialTargetY": "A",
+        "metaCoordinationScopes": [
+          "init_B_image_0",
+          "init_B_obsSegmentations_0"
+        ],
+        "metaCoordinationScopesBy": [
+          "init_B_image_0",
+          "init_B_obsSegmentations_0"
+        ],
+        "obsSetSelection": "A",
+        "obsSetColor": "A"
+      },
+      "x": 6,
+      "y": 6,
+      "w": 6,
+      "h": 6
+    }
+  ],
+  "initStrategy": "auto"
+}
